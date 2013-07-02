@@ -1,2 +1,6 @@
-mongo_batch_ensure_index
-========================
+MongoDB Batch Ensure Index
+==========================
+
+## Running
+
+`mongo --nodb collection_indexes.js`
