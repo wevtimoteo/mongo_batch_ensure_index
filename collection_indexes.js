@@ -35,7 +35,7 @@ var collections = {
  */
 var db = connect(host + ":" + port + "/" + database_name);
 
-print("- Listing collections:");
+print("//- Listing collections:");
 printjson(db.getCollectionNames());
 
 /*!
@@ -43,7 +43,7 @@ printjson(db.getCollectionNames());
  */
 function batchEnsureIndexes(collections) {
   for (var collection in collections) {
-    print("-- Ensuring indexes for " + collection + " collection...");
+    print("//-- Ensuring indexes for " + collection + " collection...");
     for (var index_group in collections[collection]) {
       index_group = collections[collection][index_group];
 
@@ -76,7 +76,7 @@ function formatIndexGroup(index_group) {
  * Parametized Ensure Index
  */
 function parametizedEnsureIndex(collection, formatted_index_group) {
-  eval("print(\"db." + collection + ".ensureIndex(" + formatted_index_group + ");\")");
+  print("db." + collection + ".ensureIndex(" + formatted_index_group + ");");
 }
 
 /*!
